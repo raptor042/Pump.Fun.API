@@ -1,12 +1,12 @@
-"0x25b6c30c8aeB85C9962C01ad68073e6842Fe7c01 0x58a5C97E42F6F7dDCE9F038364F597500F4dA2c0 1n"
+"0xd240d2810dc482FF820A82DE282c9230FEbE5352 0x8d86c4Cb9A61876855617298BeD249F87A628B58 1n"
 
 export const WETH = "0x1BDD24840e119DC2602dCC587Dd182812427A5Cc"
 
-export const FACTORY_CA = "0xB8a0EA4964Bab55f3aFa46DE7e11cd0b83fE95c9"
+export const FACTORY_CA = "0x9Bd79d55bDfb5d816A2F2D0B5a93526C084c8654"
 
-export const ROUTER_CA = "0x2889f3A17242299414aEEf016a0587389a2e7c5a"
+export const ROUTER_CA = "0xe5E7f83281B062f3348c0e0Fef42724207E3bAD3"
 
-export const PUMP_FUN_CA = "0x4bA82B87eD289EfA7FEef43b062C2d84BfdE8A1e"
+export const PUMP_FUN_CA = "0x27120eDaF483B1ca39435c2a54B06fD17C4e2735"
 
 export const ERC20_ABI = [
   {
@@ -195,6 +195,19 @@ export const ERC20_ABI = [
       }
     ],
     "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "excludeFromMaxTx",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -1029,7 +1042,7 @@ export const ROUTER_ABI = [
         "type": "uint256"
       }
     ],
-    "stateMutability": "payable",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -1123,11 +1136,6 @@ export const PUMP_FUN_ABI = [
       {
         "internalType": "uint256",
         "name": "_refFee",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_lpFee",
         "type": "uint256"
       }
     ],
@@ -1339,12 +1347,12 @@ export const PUMP_FUN_ABI = [
         "type": "uint256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "pure",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "marketCap",
+    "name": "marketCapLimit",
     "outputs": [
       {
         "internalType": "uint256",
@@ -1573,25 +1581,6 @@ export const PUMP_FUN_ABI = [
       }
     ],
     "name": "updateLaunchFee",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_fee",
-        "type": "uint256"
-      }
-    ],
-    "name": "updateLiquidityFee",
     "outputs": [
       {
         "internalType": "uint256",

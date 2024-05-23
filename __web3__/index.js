@@ -27,7 +27,7 @@ export const launch = async () => {
             console.log(token, pair, n);
         })
 
-        return launch
+        return true
     } catch (error) {
         console.log(error)
     }
@@ -41,38 +41,38 @@ export const swap = async () => {
     )
 
     const pair = new ethers.Contract(
-        "0x58a5C97E42F6F7dDCE9F038364F597500F4dA2c0",
+        "0x8d86c4Cb9A61876855617298BeD249F87A628B58",
         PAIR_ABI,
         getProvider()
     )
 
     const token = new ethers.Contract(
-        "0x25b6c30c8aeB85C9962C01ad68073e6842Fe7c01",
+        "0xd240d2810dc482FF820A82DE282c9230FEbE5352",
         ERC20_ABI,
         getSignerII()
     )
 
     try {
         // await router.swapETHForTokens(
-        //     "0x25b6c30c8aeB85C9962C01ad68073e6842Fe7c01",
-        //     "0x6627f8ddc81057368F9717042E38E3DEcb68dAc3",
-        //     {value: ethers.parseEther("0.00025")}
+        //     "0xd240d2810dc482FF820A82DE282c9230FEbE5352",
+        //     "0x03640D168B2C5F35c9C7ef296f0F064a90E5FA62",
+        //     {value: ethers.parseEther("0.0002")}
         // )
 
         await router.swapTokensForETH(
             ethers.parseEther("50000"),
-            "0x25b6c30c8aeB85C9962C01ad68073e6842Fe7c01",
+            "0xd240d2810dc482FF820A82DE282c9230FEbE5352",
             "0x6627f8ddc81057368F9717042E38E3DEcb68dAc3"
         )
 
         // const amountOut = await router.getAmountsOut(
-        //     "0x25b6c30c8aeB85C9962C01ad68073e6842Fe7c01",
+        //     "0xd240d2810dc482FF820A82DE282c9230FEbE5352",
         //     WETH,
         //     ethers.parseEther("0.0002")
         // )
         // console.log(ethers.formatEther(amountOut))
 
-        // await token.approve("0x2889f3A17242299414aEEf016a0587389a2e7c5a", ethers.parseEther("50000"))
+        // await token.approve("0xe5E7f83281B062f3348c0e0Fef42724207E3bAD3", ethers.parseEther("50000"))
 
         // token.on("Approval", (owner, spender, value) => {
         //     console.log(owner, spender, ethers.formatEther(value))
@@ -96,13 +96,13 @@ export const remove = async () => {
     )
 
     const pair = new ethers.Contract(
-        "0x58a5C97E42F6F7dDCE9F038364F597500F4dA2c0",
+        "0x8d86c4Cb9A61876855617298BeD249F87A628B58",
         PAIR_ABI,
         getProvider()
     )
 
     try {
-        await p_f.deploy("0x25b6c30c8aeB85C9962C01ad68073e6842Fe7c01")
+        await p_f.deploy("0xd240d2810dc482FF820A82DE282c9230FEbE5352")
 
         pair.on("Burn", (reserve0, reserve1, lp, e) => {
             console.log(reserve0, reserve1, lp);
@@ -116,13 +116,13 @@ export const remove = async () => {
 
 export const get = async () => {
     const pair = new ethers.Contract(
-        "0x58a5C97E42F6F7dDCE9F038364F597500F4dA2c0",
+        "0x8d86c4Cb9A61876855617298BeD249F87A628B58",
         PAIR_ABI,
         getProvider()
     )
 
     const token = new ethers.Contract(
-        "0x25b6c30c8aeB85C9962C01ad68073e6842Fe7c01",
+        "0xd240d2810dc482FF820A82DE282c9230FEbE5352",
         ERC20_ABI,
         getProvider()
     )
@@ -146,7 +146,7 @@ export const get = async () => {
 
         const supply = await token.totalSupply()
         const decimals = await token.decimals()
-        const balance = await token.balanceOf("0x58a5C97E42F6F7dDCE9F038364F597500F4dA2c0")
+        const balance = await token.balanceOf("0x8d86c4Cb9A61876855617298BeD249F87A628B58")
         const balance_ = await token.balanceOf("0x03640D168B2C5F35c9C7ef296f0F064a90E5FA62")
         const _balance = await token.balanceOf("0x6627f8ddc81057368F9717042E38E3DEcb68dAc3")
 
