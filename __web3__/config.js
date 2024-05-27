@@ -1,12 +1,12 @@
-"0xd240d2810dc482FF820A82DE282c9230FEbE5352 0x8d86c4Cb9A61876855617298BeD249F87A628B58 1n"
+""
 
-export const WETH = "0x1BDD24840e119DC2602dCC587Dd182812427A5Cc"
+export const WETH = "0x4200000000000000000000000000000000000006"
 
-export const FACTORY_CA = "0x9Bd79d55bDfb5d816A2F2D0B5a93526C084c8654"
+export const FACTORY_CA = "0x6eDB8657DBf6b5Eb645E02385f54B8CD362F09B9"
 
-export const ROUTER_CA = "0xe5E7f83281B062f3348c0e0Fef42724207E3bAD3"
+export const ROUTER_CA = "0x502aB81dC064AA3c946c19293dDaCFC7f415f967"
 
-export const PUMP_FUN_CA = "0x27120eDaF483B1ca39435c2a54B06fD17C4e2735"
+export const PUMP_FUN_CA = "0x567C29E248e974fcfe7E79Fc8547c29eb7cdB3af"
 
 export const ERC20_ABI = [
   {
@@ -373,6 +373,11 @@ export const PAIR_ABI = [
     "type": "constructor"
   },
   {
+    "inputs": [],
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -496,6 +501,19 @@ export const PAIR_ABI = [
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "balance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -564,11 +582,6 @@ export const PAIR_ABI = [
     "inputs": [],
     "name": "kLast",
     "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      },
       {
         "internalType": "uint256",
         "name": "",
@@ -751,12 +764,17 @@ export const FACTORY_ABI = [
     "inputs": [
       {
         "internalType": "address",
-        "name": "fees_wallet",
+        "name": "fee_to",
         "type": "address"
       }
     ],
     "stateMutability": "nonpayable",
     "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error"
   },
   {
     "anonymous": false,
@@ -896,6 +914,19 @@ export const FACTORY_ABI = [
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "fee_to",
+        "type": "address"
+      }
+    ],
+    "name": "setFeeTo",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "txFee",
     "outputs": [
@@ -926,6 +957,11 @@ export const ROUTER_ABI = [
     ],
     "stateMutability": "nonpayable",
     "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error"
   },
   {
     "inputs": [],
@@ -1008,7 +1044,7 @@ export const ROUTER_ABI = [
         "type": "uint256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -1125,7 +1161,7 @@ export const PUMP_FUN_ABI = [
       },
       {
         "internalType": "address",
-        "name": "fees_wallet",
+        "name": "fee_to",
         "type": "address"
       },
       {
@@ -1141,6 +1177,11 @@ export const PUMP_FUN_ABI = [
     ],
     "stateMutability": "nonpayable",
     "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error"
   },
   {
     "anonymous": false,
@@ -1225,7 +1266,7 @@ export const PUMP_FUN_ABI = [
     "inputs": [
       {
         "internalType": "address",
-        "name": "token_",
+        "name": "tk",
         "type": "address"
       }
     ],
@@ -1428,6 +1469,19 @@ export const PUMP_FUN_ABI = [
     "inputs": [
       {
         "internalType": "address",
+        "name": "fee_to",
+        "type": "address"
+      }
+    ],
+    "name": "setFeeTo",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "",
         "type": "address"
       }
@@ -1492,6 +1546,11 @@ export const PUMP_FUN_ABI = [
       {
         "internalType": "bool",
         "name": "trading",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "tradingOnUniswap",
         "type": "bool"
       }
     ],
@@ -1566,6 +1625,11 @@ export const PUMP_FUN_ABI = [
       {
         "internalType": "bool",
         "name": "trading",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "tradingOnUniswap",
         "type": "bool"
       }
     ],
