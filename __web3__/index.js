@@ -1,5 +1,5 @@
 import { ethers } from "ethers"
-import { ERC20_ABI, PAIR_ABI, PUMP_FUN_ABI, PUMP_FUN_CA, ROUTER_ABI, ROUTER_CA, WETH } from "./config.js"
+import { ERC20_ABI, FACTORY_ABI, FACTORY_CA, PAIR_ABI, PUMP_FUN_ABI, PUMP_FUN_CA, ROUTER_ABI, ROUTER_CA, WETH } from "./config.js"
 import { getProvider, getSignerI, getSignerII } from "./init.js"
 
 export const launch = async () => {
@@ -95,14 +95,26 @@ export const remove = async () => {
         getSignerI()
     )
 
+    const factory = new ethers.Contract(
+        FACTORY_CA,
+        FACTORY_ABI,
+        getSignerI()
+    )
+
+    const _pair = await factory.getPair(WETH, "0xC207af252F86240a850B9F1fCf6114A9d1c8373c")
+    console.log(_pair)
+
     const pair = new ethers.Contract(
-        "0x5dda4152617990Cb755B61cb554c987029a33451",
+        _pair,
         PAIR_ABI,
         getProvider()
     )
 
+    const lp = await pair.liquidityProvider()
+    console.log(lp)
+
     try {
-        await p_f.deploy("0x6B178234211d1C7B26Ee58c8c4AdC33F84d685Ae")
+        await p_f.deploy("0xC207af252F86240a850B9F1fCf6114A9d1c8373c")
 
         pair.on("Burn", (reserve0, reserve1, lp, e) => {
             console.log(reserve0, reserve1, lp);
