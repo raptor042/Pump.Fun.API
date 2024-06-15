@@ -1,6 +1,6 @@
 import { ethers } from "ethers"
 import { ERC20_ABI, FACTORY_ABI, FACTORY_CA, PAIR_ABI, PUMP_FUN_ABI, PUMP_FUN_CA, ROUTER_ABI, ROUTER_CA, WETH } from "./config.js"
-import { getProvider, getSignerI, getSignerII } from "./init.js"
+import { getProvider, getSigner, getSignerI, getSignerII } from "./init.js"
 
 export const launch = async () => {
     const p_f = new ethers.Contract(
@@ -92,16 +92,16 @@ export const remove = async () => {
     const p_f = new ethers.Contract(
         PUMP_FUN_CA,
         PUMP_FUN_ABI,
-        getSignerI()
+        getSigner()
     )
 
     const factory = new ethers.Contract(
         FACTORY_CA,
         FACTORY_ABI,
-        getSignerI()
+        getProvider()
     )
 
-    const _pair = await factory.getPair(WETH, "0xC207af252F86240a850B9F1fCf6114A9d1c8373c")
+    const _pair = await factory.getPair(WETH, "0xc5E24DBDe90Ff8B5C1E92Fb060A31f68a8423f7E")
     console.log(_pair)
 
     const pair = new ethers.Contract(
@@ -114,7 +114,7 @@ export const remove = async () => {
     console.log(lp)
 
     try {
-        await p_f.deploy("0xC207af252F86240a850B9F1fCf6114A9d1c8373c")
+        await p_f.deploy("0xc5E24DBDe90Ff8B5C1E92Fb060A31f68a8423f7E")
 
         pair.on("Burn", (reserve0, reserve1, lp, e) => {
             console.log(reserve0, reserve1, lp);

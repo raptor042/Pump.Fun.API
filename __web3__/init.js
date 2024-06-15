@@ -4,7 +4,11 @@ import { config } from "dotenv"
 config()
 
 export const getProvider = () => {
-    return new ethers.JsonRpcProvider(process.env.SEPOLIA_BASE_API_URL)
+    return new ethers.JsonRpcProvider(process.env.BASE_API_URL)
+}
+
+export const getSigner = () => {
+    return new ethers.Wallet(process.env.PRIVATE_KEY, getProvider())
 }
 
 export const getSignerI = () => {
