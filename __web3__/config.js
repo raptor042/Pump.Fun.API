@@ -1,10 +1,10 @@
 export const WETH = "0x4200000000000000000000000000000000000006"
 
-export const FACTORY_CA = "0xCd79c0370a0224f1a6ceF7F668E51586CaFb80DA"
+export const FACTORY_CA = "0x76CDEA651E0bE2a73E7B9B2c77Bc364e724c6a79"
 
-export const ROUTER_CA = "0x138475dDC8d6180efFda1833188E8A273E477150"
+export const ROUTER_CA = "0x3bcAF2dEd46a51B1e7cC6a2d49AD4a1413052369"
 
-export const PUMP_FUN_CA = "0x73A82359495aE783A86a14b3f1fDE01434247dA0"
+export const PUMP_FUN_CA = "0x7C9617b8bae0b8F3f3B14C5Db2fE8bCE6e861a1c"
 
 export const ERC20_ABI = [
   {
@@ -1313,77 +1313,6 @@ export const PUMP_FUN_ABI = [
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "tk",
-        "type": "address"
-      }
-    ],
-    "name": "getTokenData",
-    "outputs": [
-      {
-        "components": [
-          {
-            "internalType": "address",
-            "name": "token",
-            "type": "address"
-          },
-          {
-            "internalType": "string",
-            "name": "name",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "ticker",
-            "type": "string"
-          },
-          {
-            "internalType": "uint256",
-            "name": "supply",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "price",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "marketCap",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "liquidity",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "_liquidity",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "volume24H",
-            "type": "uint256"
-          },
-          {
-            "internalType": "int256",
-            "name": "priceChange24H",
-            "type": "int256"
-          }
-        ],
-        "internalType": "struct PumpFun.Data",
-        "name": "",
-        "type": "tuple"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "getTokens",
     "outputs": [
@@ -1503,71 +1432,6 @@ export const PUMP_FUN_ABI = [
           }
         ],
         "internalType": "struct PumpFun.Token[]",
-        "name": "",
-        "type": "tuple[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getTokensData",
-    "outputs": [
-      {
-        "components": [
-          {
-            "internalType": "address",
-            "name": "token",
-            "type": "address"
-          },
-          {
-            "internalType": "string",
-            "name": "name",
-            "type": "string"
-          },
-          {
-            "internalType": "string",
-            "name": "ticker",
-            "type": "string"
-          },
-          {
-            "internalType": "uint256",
-            "name": "supply",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "price",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "marketCap",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "liquidity",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "_liquidity",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "volume24H",
-            "type": "uint256"
-          },
-          {
-            "internalType": "int256",
-            "name": "priceChange24H",
-            "type": "int256"
-          }
-        ],
-        "internalType": "struct PumpFun.Data[]",
         "name": "",
         "type": "tuple[]"
       }
