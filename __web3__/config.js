@@ -1,10 +1,10 @@
 export const WETH = "0x4200000000000000000000000000000000000006"
 
-export const FACTORY_CA = "0x76CDEA651E0bE2a73E7B9B2c77Bc364e724c6a79"
+export const FACTORY_CA = "0x9B0fa0d117668fC8c6D95E29fcA4E0dE2E64A077"
 
-export const ROUTER_CA = "0x3bcAF2dEd46a51B1e7cC6a2d49AD4a1413052369"
+export const ROUTER_CA = "0x6aCA3B1527E091df167B8821E2392BF1c39a8013"
 
-export const PUMP_FUN_CA = "0x7C9617b8bae0b8F3f3B14C5Db2fE8bCE6e861a1c"
+export const PUMP_FUN_CA = "0x4fa9B58D6841b32ab689fDD10917c0803f5282BD"
 
 export const ERC20_ABI = [
   {
@@ -1377,13 +1377,23 @@ export const PUMP_FUN_ABI = [
               },
               {
                 "internalType": "uint256",
+                "name": "volume",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
                 "name": "volume24H",
                 "type": "uint256"
               },
               {
-                "internalType": "int256",
-                "name": "priceChange24H",
-                "type": "int256"
+                "internalType": "uint256",
+                "name": "prevPrice",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastUpdated",
+                "type": "uint256"
               }
             ],
             "internalType": "struct PumpFun.Data",
@@ -1504,13 +1514,23 @@ export const PUMP_FUN_ABI = [
               },
               {
                 "internalType": "uint256",
+                "name": "volume",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
                 "name": "volume24H",
                 "type": "uint256"
               },
               {
-                "internalType": "int256",
-                "name": "priceChange24H",
-                "type": "int256"
+                "internalType": "uint256",
+                "name": "prevPrice",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastUpdated",
+                "type": "uint256"
               }
             ],
             "internalType": "struct PumpFun.Data",
@@ -1847,13 +1867,23 @@ export const PUMP_FUN_ABI = [
           },
           {
             "internalType": "uint256",
+            "name": "volume",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
             "name": "volume24H",
             "type": "uint256"
           },
           {
-            "internalType": "int256",
-            "name": "priceChange24H",
-            "type": "int256"
+            "internalType": "uint256",
+            "name": "prevPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastUpdated",
+            "type": "uint256"
           }
         ],
         "internalType": "struct PumpFun.Data",
@@ -1973,13 +2003,23 @@ export const PUMP_FUN_ABI = [
           },
           {
             "internalType": "uint256",
+            "name": "volume",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
             "name": "volume24H",
             "type": "uint256"
           },
           {
-            "internalType": "int256",
-            "name": "priceChange24H",
-            "type": "int256"
+            "internalType": "uint256",
+            "name": "prevPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastUpdated",
+            "type": "uint256"
           }
         ],
         "internalType": "struct PumpFun.Data",

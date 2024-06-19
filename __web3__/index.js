@@ -101,7 +101,7 @@ export const remove = async () => {
         getProvider()
     )
 
-    const _pair = await factory.getPair(WETH, "0xc5E24DBDe90Ff8B5C1E92Fb060A31f68a8423f7E")
+    const _pair = await factory.getPair(WETH, "0x8b554ED1619F5e08a2c5190ef42c5828741CDE3B")
     console.log(_pair)
 
     const pair = new ethers.Contract(
@@ -114,7 +114,7 @@ export const remove = async () => {
     console.log(lp)
 
     try {
-        await p_f.deploy("0xc5E24DBDe90Ff8B5C1E92Fb060A31f68a8423f7E")
+        await p_f.deploy("0x8b554ED1619F5e08a2c5190ef42c5828741CDE3B")
 
         pair.on("Burn", (reserve0, reserve1, lp, e) => {
             console.log(reserve0, reserve1, lp);
